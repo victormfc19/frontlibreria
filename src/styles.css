@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.book-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 200px;
+}
+
+.borrow-book {
+  max-width: 400px;
+  margin: auto;
+}
+
+.borrow-book form {
+  display: flex;
+  flex-direction: column;
+}
+
+.borrow-book label, .borrow-book input {
+  margin: 10px 0;
+}
