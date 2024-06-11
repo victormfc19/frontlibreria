@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class BookService {
-  private apiUrl = 'http://localhost:3001/books';
+  private apiUrl = 'https://backlibreria-j5fj.onrender.com/books';
 
   constructor(private http: HttpClient) { }
 
