@@ -2,7 +2,7 @@ import { NgFor } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BookService } from 'app/book.service';
 import { ReservaService } from 'app/reserva.service';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -15,7 +15,9 @@ export class BookListComponent {
 
   constructor(
     private bookService: BookService,
-    private reservaService: ReservaService
+    private reservaService: ReservaService,
+    private router: Router, 
+    private route: ActivatedRoute
   ) { }
 
   books: any[] = [];
@@ -45,7 +47,7 @@ export class BookListComponent {
 
     this.reservaService.borrowBook(body).subscribe(data => {
       console.log(`respuesta --> ${data}`);
-      window.location.reload();
+      this.router.navigate(['']);
     }, error => {
       console.log(`El error es --> ${error.status}, ${error.message}`);
       alert("Al parecer el documento no es correcto, o el Stock del libro llego a 0.");
